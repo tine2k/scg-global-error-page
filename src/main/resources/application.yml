@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: httpbin
+          uri: http://httpbin.org
+          predicates:
+            - Path=/**
+
+      default-filters:
+        - name: ErrorFilter
+
